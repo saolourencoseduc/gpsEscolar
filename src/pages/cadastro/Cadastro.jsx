@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity } from 'react-native';
-import { useEffect, useState } from 'react';
-import { StatusBar } from 'expo-status-bar';
+
 
 const CadastroScreen = () => {
   const [phoneNumber, setPhoneNumber] = useState('');
@@ -34,62 +33,6 @@ const CadastroScreen = () => {
     </View>
   );
 };
-
-export  function App2() {
-  const [user, setUser] = useState<{
-    email: string;
-    name: string;
-    picture: string;
-  } | null>(null);
-
-  if (user) {
-    return (
-      <View style={styles.container}>
-        <Text
-          style={{
-            fontSize: 20,
-            marginBottom: 10,
-          }}
-        >
-          Seja Bem Vindo ✌
-        </Text>
-        <Image
-          source={{
-            uri: user.picture,
-            width: 70,
-            height: 70,
-          }}
-          borderRadius={40}
-        />
-        <Text
-          style={{
-            marginTop: 10,
-            fontSize: 17,
-          }}
-        >
-          {user.name}
-        </Text>
-        <Text
-          style={{
-            marginBottom: 20,
-          }}
-        >
-          {user.email}
-        </Text>
-        <Button title='Sair' onPress={() => setUser(null)} />
-        <StatusBar style='auto' />
-      </View>
-    );
-  }
-  return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Login com Google</Text>
-      <Button title='Entrar' disabled={false} onPress={() => {}} />
-      <StatusBar style='auto' />
-    </View>
-  );
-}
-
 
 const styles = StyleSheet.create({
   container: {

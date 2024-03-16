@@ -1,18 +1,21 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity, Button } from 'react-native';
 
-export default function App() {
+export default function Home({navigation}) {
   return (
     
     <View style={styles.container}>
       <Image
-        source={require("./assets/sr.png")}
+        source={require("../../../assets/sr.png")}
         style={styles.logo}
       />
-      <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}> Bora nessa </Text>
-      </TouchableOpacity>
-    </View>
+      <TouchableOpacity 
+        style={styles.button}
+        activeOpacity={0.8} 
+        >
+       <Button title='Cadastro' style={styles.buttonText} onPress={() =>{navigation.navigate("Cadastro")}}/>
+      </TouchableOpacity>    
+    </View>  
   );
 }
 
