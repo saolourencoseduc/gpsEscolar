@@ -1,15 +1,25 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity } from 'react-native';
-
+import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, Alert } from 'react-native';
+import { AuthContext, useAuth } from '../../context';
 
 const CadastroScreen = () => {
   const [phoneNumber, setPhoneNumber] = useState('');
+  const {handleLogin} = useAuth()
 
-  const handleSendCode = () => {
-    // TODO: Implementar a lógica para enviar o código de verificação
-    alert(`Enviando código para ${phoneNumber}`);
-  };
 
+
+  const handleSubmit = ()=>{
+    if(!phoneNumber || !(typeof phoneNumber === 'number')){
+      Alert.alert("Por favor digite seu número")
+    }else{
+      
+      handleLogin({
+        phone:phoneNumber
+      })
+    }
+
+  }
+  
   return (
     <View style={styles.container}>
       <Text> Digite seu número </Text>
@@ -17,15 +27,15 @@ const CadastroScreen = () => {
       <TextInput
         style={styles.input}
         placeholder="Digite seu número"
-        onChangeText={setPhoneNumber}
-        value={phoneNumber}
+        onChangeText={(t)=>setPhoneNumber(Number(t))}
       />
       <Text style={styles.infoText}>
         Enviaremos um código por mensagem de texto para verificar seu telefone.
       </Text>
-      <TouchableOpacity style={styles.button} onPress={handleSendCode}>
+      <TouchableOpacity style={styles.button} onPress={handleSubmit}>
         <Text style={styles.buttonText}>Enviar código</Text>
       </TouchableOpacity>
+
       <Text style={styles.alternativeText}>Ou conectar por e-mail</Text>
       <Text style={styles.legalText}>
         Utilizar o nosso aplicativo significa que você concorda com nossos Termos de Uso e Política de Privacidade.

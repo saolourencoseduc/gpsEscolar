@@ -26,8 +26,6 @@ const styles = StyleSheet.create({
         display: "flex",
         float: "left",
         marginRight: 10,
-
-
     },
     formContext:{
         width:"100%",

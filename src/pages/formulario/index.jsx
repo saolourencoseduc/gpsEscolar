@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import Form from "./src/components/form/index.jsx"
+import Form from '../../components/forms';
 
 export default function FormCadastro() {
   return (
@@ -9,7 +9,6 @@ export default function FormCadastro() {
     </View>
   );
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
