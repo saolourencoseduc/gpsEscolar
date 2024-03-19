@@ -1,20 +1,21 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, TouchableOpacity, Button } from 'react-native';
+import { StyleSheet, View, Image } from 'react-native';
+import CustomButton from '../../components/customButton/index';
 
 export default function Home({navigation}) {
   return (
     
     <View style={styles.container}>
+      
       <Image
-        source={require("../../../assets/sr.png")}
+        source={require("../../../assets/logo.png")}
         style={styles.logo}
       />
-      <TouchableOpacity 
-        style={styles.button}
-        activeOpacity={0.8} 
-        >
-       <Button title='Cadastro' style={styles.buttonText} onPress={() =>{navigation.navigate("Cadastro")}}/>
-      </TouchableOpacity>    
+
+      <CustomButton
+      title={'Cadastro'}
+      onPress={() =>{navigation.navigate("Cadastro")}}
+      />
+
     </View>  
   );
 }
@@ -26,27 +27,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  logo: {
-    marginBottom: 20, // Alterei para um valor fixo
-    width: 220,
-    height: 200
+  logo: { //Pretendo criar um componente para a logo também.
+    marginBottom: 100, // Alterei para um valor fixo
+    width: 320,
+    height: 300
   },
-  button: {
-    backgroundColor: "#1976D2",
-    width: "80%",
-    height: 50,
-    alignItems: "center",
-    justifyContent: "center",
-    marginBottom: -250, // Ajuste a margem inferior para separar do logo
-    marginTop: 180, // Removi o marginTop anterior
-    borderRadius: 8,
-    borderWidth: 0.5, // Define a largura da borda
-    borderColor: 'white',     
-  },
-  buttonText: {
-    color: 'white',
-    fontSize: 16,
-    fontWeight: 'bold',
-    fontFamily: '',
-  }
+
 });
