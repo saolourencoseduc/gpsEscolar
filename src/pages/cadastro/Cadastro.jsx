@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, Alert } from 'react-native';
 import { AuthContext, useAuth } from '../../context'; 
 import CustomButton from '../../components/customButton/index';
 
@@ -14,12 +14,12 @@ const CadastroScreen = () => {
     }
 
     // logica da API COM VICTOR 
-    console.log('Cadastro realizado com sucesso!');
+    Alert.alert('Cadastro realizado com sucesso!');
   };
 
   return (
     <View style={styles.container}>
-      <CadastroLogo /> {/* Componente separada para a logo*/}
+      {/* <CadastroLogo /> Componente separada para a logo */}
       <Text style={styles.title}>Cadastro</Text>
 
       <TextInput
@@ -48,14 +48,14 @@ const CadastroScreen = () => {
   );
 };
 
-const CadastroLogo = () => {
-  <Image source={require('../assets/sr.png')} />
-;
+// const CadastroLogo = () => {
+//   <Image source={require('../../../assets/logo.png')} />
+// ;
 
-  return (
-    <Image source={logo} style={styles.logo} />
-  );
-};
+//   return (
+//     <Image source={logo} style={styles.logo} />
+//   );
+// };
 
 const styles = StyleSheet.create({
   container: {

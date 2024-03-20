@@ -1,7 +1,5 @@
 import React from "react";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
-import styles from "./style";
-
 
 export default function Button({title, onPress}) {
 
