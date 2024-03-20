@@ -4,6 +4,7 @@ import { AuthContext, useAuth } from '../../context';
 import CustomButton from '../../components/customButton/index';
 
 const CadastroScreen = () => {
+  const {handleLogin} = useAuth() 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -11,9 +12,12 @@ const CadastroScreen = () => {
     if (!email || !password) {
       Alert.alert('Por favor, preencha o e-mail e senha.');
       return;
-    }
-
-    // logica da API COM VICTOR 
+    }else
+      handleLogin({
+        email:email,
+        password:password
+      })
+    // logica da API COM VICTOR   
     Alert.alert('Cadastro realizado com sucesso!');
   };
 

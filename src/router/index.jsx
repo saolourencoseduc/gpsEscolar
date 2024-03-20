@@ -7,6 +7,6 @@ export default function RootRoutes(){
     const {user, isAuthenticate, isNumber} = useAuth()
     
     return(
-        isAuthenticate && isNumber ? <AuthRoutes/> : <AppRoutes/>
+        isAuthenticate ? <AuthRoutes/> : <AppRoutes/>
     )
 }

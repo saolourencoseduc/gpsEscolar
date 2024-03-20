@@ -4,9 +4,8 @@ export const AuthContext = createContext({});
 
 export const AuthProvider = ({children}) => {
     const [user, setUser] = useState(null);
-    const handleLogin = ({phone}) => {
-        const phoneNumber = Number(phone)
-        setUser({phoneNumber, id:'123345'})
+    const handleLogin = ({email, password}) => {
+        setUser({email, password})
     };
 
     return (
@@ -14,7 +13,7 @@ export const AuthProvider = ({children}) => {
             handleLogin,
             user: user,
             isAuthenticate: !!user,
-            isNumber: user ? typeof user.phoneNumber === 'number' : false
+           
         }}>
             {children}
         </AuthContext.Provider>
