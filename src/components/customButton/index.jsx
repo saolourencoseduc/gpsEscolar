@@ -27,19 +27,16 @@ const styles = StyleSheet.create({
         justifyContent:'center',
         marginLeft: 'auto',
         marginRight: 'auto',
-        width:"90%",
+        width:"75%",
         backgroundColor:"#069AC9",
         paddingTop: 14,
         paddingBottom: 14,
         paddingHorizontal: 100,
-        margin: 10,
-  
-        
-      },
-      buttonText: {
+        margin: 20,  
+    },
+    buttonText: {
         color: 'white',
         fontSize: 16,
         fontWeight: 'bold',
-        fontFamily: '',
-}
+    }
 });

@@ -29,24 +29,25 @@ export default function Form() {
 
     return (
         <View style={styles.container}>
+            
             <ScrollView>
             <Image source={require("../../../assets/logo.png")} style={styles.image}></Image>
-            <Text style={styles.textTitle}>Bem vinde ao seu GPS</Text>
+            <Text style={styles.title}>Bem vinde ao seu GPS</Text>
             <Text style={styles.infoText}>Vamos nos conhecer?!</Text>
 
-            <View>
-                <View style={styles.form}>
+               
+            <View style={styles.form}>
 
-                    <Text style={styles.formLabel}>Nome Completo:</Text>
-                    <Text style={styles.errorMessage}>{errorMessage}</Text>
-                    <TextInput
-                        onChangeText={setNome}
-                        style={styles.input}
-                        keyboardType="default"
-                        placeholder="Digite seu nome completo"
-                    />
+                <Text style={styles.textLabel}>Nome Completo:</Text>
+                <Text style={styles.errorMessage}>{errorMessage}</Text>
+                <TextInput
+                    onChangeText={setNome}
+                    style={styles.input}
+                    keyboardType="default"
+                    placeholder="Digite seu nome completo"
+                />
 
-                    <Text style={styles.formLabel}>CPF:</Text>
+                    <Text style={styles.textLabel}>CPF:</Text>
                     <TextInput 
                         onChangeText={setCpf}
                         style={styles.input}
@@ -54,7 +55,7 @@ export default function Form() {
                         placeholder="012.345.678-90"
                     />
 
-                    <Text style={styles.formLabel}>Data de Nascimento:</Text>
+                    <Text style={styles.textLabel}>Data de Nascimento:</Text>
                     <TextInput 
                         onChangeText={setData}
                         style={styles.input}
@@ -62,7 +63,7 @@ export default function Form() {
                         placeholder="DD/MM/AAAA"
                     />
 
-                    <Text style={styles.formLabel}>Gênero:</Text>
+                    <Text style={styles.textLabel}>Gênero:</Text>
                     <TextInput 
                         onChangeText={setGenero}
                         style={styles.input}
@@ -70,7 +71,7 @@ export default function Form() {
                         placeholder="Masculino/Feminino"
                     />
 
-                    <Text style={styles.formLabel}>Deficiência:</Text>
+                    <Text style={styles.textLabel}>Deficiência:</Text>
                     <TextInput 
                         onChangeText={setDeficiencia}
                         style={styles.input}
@@ -78,7 +79,7 @@ export default function Form() {
                         placeholder="Digite a deficiência (opcional)"
                     />
 
-                    <Text style={styles.formLabel}>Nome do responsável:</Text>
+                    <Text style={styles.textLabel}>Nome do responsável:</Text>
                     <TextInput
                         onChangeText={setResponsavel} 
                         style={styles.input}
@@ -86,7 +87,7 @@ export default function Form() {
                         placeholder="Nome do responsável"
                     />
                     
-                    <Text style={styles.formLabel}>Grau de parentesco:</Text>
+                    <Text style={styles.textLabel}>Grau de parentesco:</Text>
                     <TextInput
                         onChangeText={setParentesco} 
                         style={styles.input}
@@ -102,7 +103,7 @@ export default function Form() {
                     
 
                 </View>
-            </View>
+           
             </ScrollView>
             
         </View>

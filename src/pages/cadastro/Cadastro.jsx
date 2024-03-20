@@ -52,36 +52,31 @@ const CadastroScreen = () => {
   );
 };
 
-// const CadastroLogo = () => {
-//   <Image source={require('../../../assets/logo.png')} />
-// ;
-
-//   return (
-//     <Image source={logo} style={styles.logo} />
-//   );
-// };
 
 const styles = StyleSheet.create({
-  container: {
+  container: { 
     flex: 1,
     backgroundColor: '#fff',
+  },
+  title:{
+    color:"#0382C1",
+    fontSize:24,
+    fontWeight:"bold",
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 20,
-  },
-  input: {
-    width: '80%',
-    height: 50,
-    borderColor: '#ccc',
-    borderWidth: 1,
+    marginVertical: 40,
+    textAlign: 'center',
+},
+  input:{
+    width: '90%',
+    height: 40,
+    borderColor: '#069AC9',
+    borderWidth: 1.3,
     borderRadius: 8,
     padding: 10,
     marginBottom: 10,
-  },
+    alignSelf:'center',
+},
   hiperlinkText: {
     fontSize: 16,
     textAlign: 'center',
@@ -92,14 +87,13 @@ const styles = StyleSheet.create({
   legalText: {
     fontSize: 12,
     textAlign: 'center',
-    justifyContent: 'center',
+    alignSelf:'center',
     position: 'absolute',
     bottom: 0,
     margin: 20,
-    marginVertical: 20,
     color: 'gray',
   },
-  logo: {
+  logo: { //VER
     width: 200,
     height: 200,
     marginBottom: 20,

@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { View, Text, TextInput, TouchableOpacity, Image } from "react-native"
+import CustomButton from '../../components/customButton/index';
 import styles from "./style"
 
 export default function CadastroCasa() {
@@ -22,33 +23,36 @@ function preencherCasa(){
 
     return (
 
-        <View style={styles.boxTitle}>
+        <View style={styles.container}>
         {/* <Image source={require("../../../assets/logo.png")} style={styles.image}></Image> */}
 
-            <View style={styles.formContext}>
-                <View style={styles.form}>
+        <Text style={styles.title}>Casa</Text>
 
-                <Text style={styles.formLabel}>Endereço da sua casa:</Text>
+            <View style={styles.form}>
+                
+                <Text style={styles.textLabel}>Endereço da sua casa:</Text>
                 <Text style={styles.errorMessage}>{errorMessage}</Text>
+                
                 <TextInput
                 onChangeText={setCasa}
-                style={styles.formInput}
+                style={styles.input}
                 keyboardType="web-search"
                 placeholder= "Digite seu endereço"
                 ></TextInput>
 
-                <Text  onPress={() =>  {Linking.openURL('https://reactnative.dev/')}}> 
+                <Text  
+                style={styles.hiperlinkText}
+                onPress={() =>  {Linking.openURL('https://reactnative.dev/')}}> 
                 Escolher no Mapa</Text>
                 {/* Chamar API que leva o app ao maps */}
 
-                <TouchableOpacity style={styles.buttonEffect}
-                    onPress={() =>  preencherCasa()}
-                ><Text style={styles.buttonText}>Próximo</Text>
-                </TouchableOpacity>
+                <CustomButton
+                title={"Próximo"}
+                onPress={() =>  preencherCasa()}
+                ></CustomButton>
   
                 </View>
             </View>
-        </View>
         
     );
                 

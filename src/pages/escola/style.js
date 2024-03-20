@@ -4,77 +4,48 @@ const styles = StyleSheet.create({
 
     container: {
         flex: 1,
-        backgroundColor: '#fff',
-        paddingTop: 70,
-      },
-    boxTitle:{
-        alignItems:"flex-start",
-        justifyContent:"center",
-        display: "flex",
+        backgroundColor: 'white',
     },
-    textTitle:{
-        color:"#069AC9",
+    title:{
+        color:"#0382C1",
         fontSize:24,
         fontWeight:"bold",
-        marginLeft: 50,
-        marginTop: 50,
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginVertical: 40,
+        textAlign: 'center',
     },
-    image:{
-        width: 75,
-        height: 75,
-        marginLeft: 300,
-        display: "flex",
-        float: "left",
-        marginRight: 10,
-
-
-    },
-    formContext:{
-        width:"100%",
-        height:"100%",
-        bottom:0,
-        backgroundColor: "#ffffff",
-        alignItems:"center",
-        borderTopLeftRadius:30,
-        borderTopRightRadius:30,
-    },
-    form: {
-        width:"100%",
-        height:"auto",
-        marginTop:10,
-        padding:10,
-    },
-    formLabel:{
+    textLabel:{
         color:"#000000",
-        fontSize:15,
-        peddingLeft:20,
+        fontSize: 16,
+        margin: 5,
+        marginBottom:0,
+        marginStart: 20,
     },
-    formInput:{
-        width:"90%",
-        height:35,
+    input:{
+        width: '90%',
+        height: 40,
+        borderColor: '#069AC9',
+        borderWidth: 1.3,
+        borderRadius: 8,
+        padding: 10,
+        marginBottom: 20,
+        alignSelf:'center',
+    },
+    hiperlinkText: {
+        fontSize: 16,
+        textAlign: 'center',
         margin: 10,
-        borderRadius: 50,
-        backgroundColor: "#9BD7E9",
-        paddingLeft:10,
-    },
-    buttonEffect:{
-        borderRadius: 50,
-        alignItems:"center",
-        justifyContent:"center",
-        width:"90%",
-        backgroundColor:"#069AC9",
-        paddingTop: 14,
-        paddingBottom: 14,
-        marginLeft: 12,
-        margin: 30,
-    },
-    buttonText:{
-        fontSize:20,
-    },
+        color: "#0382C1",
+        textDecorationLine: 'underline',
+      },
     errorMessage:{
         fontSize:10,
         color: "#FF0000",
+        marginStart: 20,
+        marginBottom:3,
     }
+    
 });
 
 export default styles 
