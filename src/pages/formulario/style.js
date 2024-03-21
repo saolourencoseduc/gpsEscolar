@@ -54,7 +54,17 @@ const styles = StyleSheet.create({
         color: "#FF0000",
         marginStart: 20,
         marginBottom:3,
-    }
+    },
+    picker: {
+        width: '90%',
+        height: 40,
+        borderColor: '#069AC9',
+        borderWidth: 1.3,
+        borderRadius: 8,
+        padding: 10,
+        marginBottom: 10,
+        alignSelf:'center', 
+      },
 });
 
 export default styles 
