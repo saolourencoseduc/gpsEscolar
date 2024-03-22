@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1059865455099",
+    "project_id": "auth-81025",
+    "storage_bucket": "auth-81025.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1059865455099:android:411c96262d73f78be2435e",
+        "android_client_info": {
+          "package_name": "com.victorf1000.gpsescolar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1059865455099-pe5hu2kl840a14qb9m6ptug9b1dufsr5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.victorf1000.gpsescolar",
+            "certificate_hash": "d4a8b6c585d30dc411b59e39583b43291d107953"
+          }
+        },
+        {
+          "client_id": "1059865455099-g6kuuen0e1rpae0v253lhe89p3fb8sbk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCpNt0QIXwoWTl94Cw2NRLTIjSfQY8ntuQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1059865455099-g6kuuen0e1rpae0v253lhe89p3fb8sbk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

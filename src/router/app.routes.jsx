@@ -9,6 +9,7 @@ function AppRoutes() {
     <AppStack.Navigator initialRouteName={"Home"}>
       <AppStack.Screen name="Home" component={Home}/>
       <AppStack.Screen name="Cadastro" component={CadastroScreen}/>
+      
     </AppStack.Navigator>
   )
 }

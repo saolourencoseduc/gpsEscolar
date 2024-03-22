@@ -21,13 +21,28 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+        
+      },
+      "package": "com.victorf1000.gpsescolar",
+      "googleServicesFile": "./google-services.json"
     },
+
     "web": {
       "favicon": "./assets/favicon2.png"
     },
     "plugins": [
-      "expo-font"
-    ]
+      "expo-font",
+      "@react-native-firebase/app",
+      "@react-native-firebase/auth",
+    
+      [
+        "@react-native-google-signin/google-signin"
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "33f48469-4f7e-4fef-b113-013d35c2b8bf"
+      }
+    }
   }
 }
