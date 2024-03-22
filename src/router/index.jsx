@@ -1,11 +1,12 @@
 import { useEffect } from "react";
 import AppRoutes from "./app.routes";
 import { AuthRoutes } from "./auth.routes";
+import { useAuth } from "../context";
 
 export default function RootRoutes(){
-    useEffect(()=>{}, [])
+    const {user, isAuthenticate, isNumber} = useAuth()
     
     return(
-        <AppRoutes/>
+        isAuthenticate ? <AuthRoutes/> : <AppRoutes/>
     )
 }

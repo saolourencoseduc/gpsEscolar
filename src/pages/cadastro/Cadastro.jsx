@@ -1,32 +1,50 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity } from 'react-native';
-
+import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, Alert } from 'react-native';
+import { AuthContext, useAuth } from '../../context'; 
+import CustomButton from '../../components/customButton/index';
 
 const CadastroScreen = () => {
-  const [phoneNumber, setPhoneNumber] = useState('');
+  const {handleLogin} = useAuth() 
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-  const handleSendCode = () => {
-    // TODO: Implementar a lógica para enviar o código de verificação
-    alert(`Enviando código para ${phoneNumber}`);
+  const handleSubmit = () => {
+    if (!email || !password) {
+      Alert.alert('Por favor, preencha o e-mail e senha.');
+      return;
+    }else
+      handleLogin({
+        email:email,
+        password:password
+      })
+    // logica da API COM VICTOR   
+    Alert.alert('Cadastro realizado com sucesso!');
   };
 
   return (
     <View style={styles.container}>
-      <Text> Digite seu número </Text>
-      
+      {/* <CadastroLogo /> Componente separada para a logo */}
+      <Text style={styles.title}>Cadastro</Text>
+
       <TextInput
         style={styles.input}
-        placeholder="Digite seu número"
-        onChangeText={setPhoneNumber}
-        value={phoneNumber}
+        placeholder="Email"
+        keyboardType="email-address"
+        autoCapitalize="none"
+        onChangeText={(text) => setEmail(text)}
       />
-      <Text style={styles.infoText}>
-        Enviaremos um código por mensagem de texto para verificar seu telefone.
-      </Text>
-      <TouchableOpacity style={styles.button} onPress={handleSendCode}>
-        <Text style={styles.buttonText}>Enviar código</Text>
-      </TouchableOpacity>
-      <Text style={styles.alternativeText}>Ou conectar por e-mail</Text>
+
+      <TextInput
+        style={styles.input}
+        placeholder="Senha"
+        secureTextEntry={true}
+        onChangeText={(text) => setPassword(text)}
+      />
+
+      <CustomButton title={'Entrar'} onPress={handleSubmit} />
+
+      <Text style={styles.hiperlinkText}>Ou conectar por e-mail</Text>
+
       <Text style={styles.legalText}>
         Utilizar o nosso aplicativo significa que você concorda com nossos Termos de Uso e Política de Privacidade.
       </Text>
@@ -34,53 +52,51 @@ const CadastroScreen = () => {
   );
 };
 
+
 const styles = StyleSheet.create({
-  container: {
+  container: { 
     flex: 1,
     backgroundColor: '#fff',
+  },
+  title:{
+    color:"#0382C1",
+    fontSize:24,
+    fontWeight:"bold",
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  logo: {
-    width: 200,
-    height: 200,
-    marginBottom: 20,
-  },
-  input: {
-    width: '80%',
-    height: 50,
-    borderColor: '#ccc',
-    borderWidth: 1,
+    marginVertical: 40,
+    textAlign: 'center',
+},
+  input:{
+    width: '90%',
+    height: 40,
+    borderColor: '#069AC9',
+    borderWidth: 1.3,
     borderRadius: 8,
     padding: 10,
     marginBottom: 10,
-  },
-  infoText: {
+    alignSelf:'center',
+},
+  hiperlinkText: {
     fontSize: 16,
     textAlign: 'center',
-    marginBottom: 20,
-  },
-  button: {
-    backgroundColor: '#000',
-    width: '80%',
-    height: 50,
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius: 8,
-  },
-  buttonText: {
-    color: '#fff',
-    fontSize: 16,
-  },
-  alternativeText: {
-    fontSize: 16,
-    textAlign: 'center',
-    marginTop: 20,
+    marginTop: 10,
+    color: "#0382C1",
+    textDecorationLine: 'underline',
   },
   legalText: {
     fontSize: 12,
     textAlign: 'center',
-    marginTop: 10,
+    alignSelf:'center',
+    position: 'absolute',
+    bottom: 0,
+    margin: 20,
+    color: 'gray',
+  },
+  logo: { //VER
+    width: 200,
+    height: 200,
+    marginBottom: 20,
   },
 });
 
